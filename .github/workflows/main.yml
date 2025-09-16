@@ -1,0 +1,22 @@
+name: Triggers and variables
+on:
+  push:
+    branches-ignore: main
+
+env:
+  OWNER: ${{github.reposity_owner}}
+  REF: ${{github.ref}}
+  ACTOR: ${{github.actor}}
+
+jobs:
+  file-pushed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Eka ajo
+        run: |
+          touch info.txt
+          echo $OWNER >> info.txt
+          echo $REF >> info.txt
+          echo $ACTOR >> info.txt
+          cat info.txt
+          

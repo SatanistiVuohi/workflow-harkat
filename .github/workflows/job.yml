@@ -1,0 +1,14 @@
+name: task2
+on:
+  issues:
+    types: [pened]
+
+jobs:
+  do-some:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Eka ajo
+        run: |
+          echo "ID is ${{github.event.issue.title}}"
+          echo "ID is ${{github.event.issue.id}}"
+          
